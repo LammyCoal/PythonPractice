@@ -38,4 +38,3 @@ print(dictionaries[0]['trophies'], dictionaries[1]['trophies'], dictionaries[2][
 print(f'The total goals of the GOATS are {average_goals}')
 print(f'The total trophies of the GOATS are {average_trophies}')
 
-hello dictionary.

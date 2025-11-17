@@ -23,7 +23,7 @@ write_liked_songs_to_file(liked_songs, 'FileIO song')
 # How to seek and truncate messages in a file
 
 sent_message = 'Hey there!, This is a secret message'
-with open('secret','r+') as file:
+with open('secret', 'r+') as file:
     file.write(sent_message)
 
 with open('secret', 'r+') as file:

@@ -1,22 +1,42 @@
 import csv
 
-max_sales = 0
-best_selling_book = None
-with(open('Bestseller - Sheet1.csv', 'r', encoding='utf-8')) as file:
+highest_sales = 0
+highest_sales_book = None
+
+with open('Bestseller - Sheet1.csv', 'r', encoding='utf-8') as file:
     csv_reader = csv.reader(file)
     file.readline()
 
     for row in csv_reader:
-        current_sales = float(row[4])
-        if current_sales > max_sales:
-            max_sales = current_sales
-            best_selling_book = row
+        sales = float(row[4])
+        if sales > highest_sales:
+            highest_sales = sales
+            highest_sales_book = row
 
-
-output_file_path = 'best_selling_book.csv'
-with(open('../best_seller_info.csv', 'w', newline='')) as file:
+with open('Bestseller_info.csv', 'w', newline='') as file:
     csv_writer = csv.writer(file)
     csv_writer.writerow(['Book','Author','Sales in million'])
-    csv_writer.writerow([best_selling_book[0], best_selling_book[1], best_selling_book[4]])
+    csv_writer.writerow([highest_sales_book[0],highest_sales_book[1],highest_sales_book[4]])
 
-print(output_file_path)
+
+#Another example on csv writing and reading
+
+data = [
+  ['Item', 'Quantity'],
+  ['Blender', 2],
+  ['Posters', 30],
+  ['Shoes', 2]
+]
+
+try:
+    with open('packing_list.csv', 'r',encoding='utf-8') as file:
+        csv_reader = csv.reader(file)
+
+        for row in csv_reader:
+            print(row)
+except FileNotFoundError:
+    print('Packing list not found.Creating a new one')
+
+    with open('packing_list.csv', 'w', newline='') as file:
+        csv_writer = csv.writer(file)
+        csv_writer.writerows(data)

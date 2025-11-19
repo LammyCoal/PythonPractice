@@ -29,7 +29,8 @@ with open('secret', 'r+') as file:
 with open('secret', 'r+') as file:
     original_message = file.read()
     file.seek(0)
-    
+
+
     unsent_message = 'This message has been unsent.'
     file.truncate(len(unsent_message))
     file.write(unsent_message)

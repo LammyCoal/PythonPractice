@@ -12,6 +12,7 @@ with open('Bestseller - Sheet1.csv', 'r', encoding='utf-8') as file:
         if sales > highest_sales:
             highest_sales = sales
             highest_sales_book = row
+            print(highest_sales_book)
 
 with open('Bestseller_info.csv', 'w', newline='') as file:
     csv_writer = csv.writer(file)

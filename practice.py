@@ -1,40 +1,21 @@
-import random
-from functools import reduce
+class BankAccount:
+  def __init__(self, initial_balance=100):
+    self.balance = initial_balance
 
-prefixes = ['Mystic', 'Golden', 'Dark', 'Shadow', 'Silver']
-suffixes = ['storm', 'song', 'fire', 'blade', 'whisper']
+  def deposit(self, amount):
+    if amount <= 0:
+      raise ValueError('Deposit amount must be positive')
+    self.balance += amount
 
-def capitalize_suffix(name):
-    return name.capitalize()
+  def withdraw(self, amount):
+    if amount <= 0:
+      raise ValueError('Withdrawal amount must be positive')
+    if amount > self.balance:
+      raise ValueError('Insufficient funds')
+    self.balance -= amount
 
-capped_suffix = list(map(capitalize_suffix, suffixes))
+lammy = BankAccount()
+lammy.deposit(100)
+lammy.withdraw(50)
+print(lammy.balance)
 
-def create_fantasy_name(list1, list2):
-    return random.choice(list1) + ' ' + random.choice(list2)
-
-random_name = [
-    create_fantasy_name(prefixes, capped_suffix)
-    for name in range(10)
-]
-
-def fire_in_name(name):
-    return 'Fire' in name
-
-def concatenate_names(name1, name2):
-    return name1 + ', ' + name2
-
-filtering = list(filter(fire_in_name, random_name))
-reduction = reduce(concatenate_names, filtering) if filtering else "no fire in names"
-
-def display_name_info():
-    print('Random name: ')
-    for name in random_name:
-        print(name)
-    print()
-
-
-    print(f"Filtered name: {filtering}")
-    print(f"Reducted name: {reduction}")
-
-
-display_name_info()

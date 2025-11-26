@@ -14,8 +14,5 @@ class BankAccount:
       raise ValueError('Insufficient funds')
     self.balance -= amount
 
-lammy = BankAccount()
-lammy.deposit(100)
-lammy.withdraw(50)
-print(lammy.balance)
-
+balanced = BankAccount()
+balanced.deposit(100)

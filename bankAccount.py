@@ -1,23 +1,32 @@
 import unittest
-from practice import BankAccount
+
+from Account import BankAccount
 
 
 class TestBankAccount(unittest.TestCase):
-    def test_initial_balance(self):
-        self.assertEqual(BankAccount().balance, 100)
-
     def setUp(self):
-        self.account = BankAccount()
-        self.account.balance = 100
+        self.account = BankAccount(100)
+
+    def test_initial_balance(self):
+        self.assertEqual(self.account.balance, 100)
 
     def tearDown(self):
         self.account = None
 
-    def test_positive_balance(self):
+    def test_deposit_positive_amount(self):
         self.account.deposit(50)
         self.assertEqual(self.account.balance, 150)
+        with self.assertRaises(ValueError):
+            self.account.deposit(-100)
 
-    def test_deposit_zero_amount(self,amount):
-        if amount <= 0:
-            raise ValueError('amount must be positive')
-        self.account.deposit(0)
+    def test_deposit_zero_amount(self):
+        with self.assertRaises(ValueError):
+            self.account.deposit(0)
+
+    def test_withdraw_insufficient_amount(self):
+        with self.assertRaises(ValueError):
+            self.account.withdraw(1000)
+
+
+if __name__ == '__main__':
+    unittest.main()

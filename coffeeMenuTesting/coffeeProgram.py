@@ -1,6 +1,6 @@
 import unittest
 
-from coffeeMenu import CoffeeMenu
+from coffeeMenuTesting.coffeeMenu import CoffeeMenu
 
 
 class TestCoffeeMenu(unittest.TestCase):

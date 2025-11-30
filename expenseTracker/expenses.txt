@@ -1,0 +1,5 @@
+
+ Your expenses are:
+ 1 Rice(50kg): ₦54000.45
+ 2 Beans(50kg): ₦34000.56
+ Total = ₦88001.01

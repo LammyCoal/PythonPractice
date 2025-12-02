@@ -2,7 +2,7 @@ from google import genai
 from google.genai import types
 from dotenv import dotenv_values
 
-config = dotenv_values(".env")
+config = dotenv_values("../.env")
 client = genai.Client(api_key=config["API_KEY"])
 
 

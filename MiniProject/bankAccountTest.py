@@ -1,6 +1,6 @@
 import unittest
 
-from Account import BankAccount
+from MiniProject.AccountTest import BankAccount
 
 
 class TestBankAccount(unittest.TestCase):

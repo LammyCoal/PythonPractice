@@ -1,0 +1,51 @@
+{
+    "1234": {
+        "name": "LammyCoal",
+        "balance": 2044,
+        "history": [
+            " Withdrawn 340 ",
+            " Deposited 3452 ",
+            " Checked balance is : 4112",
+            " Transferred 1234 to 2345",
+            " Withdrawn 2334 ",
+            " Recieved 2900 from 2345",
+            " Withdrawn \u20a63,400 ",
+            " Deposited \u20a62,000 "
+        ]
+    },
+    "2345": {
+        "name": "Basit",
+        "balance": 100,
+        "history": [
+            " Recieved 1234 from 1234",
+            " Withdrawn 234 ",
+            " Transferred 2900 to 1234"
+        ]
+    },
+    "3456": {
+        "name": "Khalid",
+        "balance": 2950.0,
+        "history": [
+            " Recieved \u20a6450.0 from 4567"
+        ]
+    },
+    "4567": {
+        "name": "Enny",
+        "balance": 12250.0,
+        "history": [
+            " Transferred \u20a6450.0 to 3456",
+            " Deposited \u20a61,200.0 ",
+            " Recieved \u20a64,500.0 from 2233",
+            " Recieved \u20a64,000.0 from Olamiji"
+        ]
+    },
+    "2233": {
+        "name": "Olamiji",
+        "balance": 500.0,
+        "history": [
+            " Deposited \u20a69,000.0 ",
+            " Transferred \u20a64,500.0 to 4567",
+            " Transferred \u20a64,000.0 to Enny"
+        ]
+    }
+}

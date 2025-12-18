@@ -184,7 +184,7 @@ def delete_student():
 
 def main_menu():
     while True:
-        print("Welcome to Student Result System")
+        print("\n Welcome to Student Result System")
         print()
         print("""
         Student Management System

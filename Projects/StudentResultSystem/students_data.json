@@ -9,5 +9,16 @@
         ],
         "grade": "A",
         "average": 82.0
+    },
+    "T002": {
+        "name": "Edu Lukmon",
+        "scores": [
+            79.0,
+            34.0,
+            45.0,
+            65.0
+        ],
+        "grade": "C",
+        "average": 55.75
     }
 }

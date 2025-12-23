@@ -19,7 +19,7 @@ class BankAccount:
     def __init__(self, name, age):
         self.name = name
         self.age = age
-        self.balance = 0
+        self.balance = 120
         BankAccount.change_size()
 
     def balance(self):
@@ -51,7 +51,7 @@ BankAccount.open_account = 23
 print(BankAccount.show_bank_name())
 print(BankAccount.add_money(10))
 print(BankAccount.account_size)
-print(BankAccount.change_name('access','23'))
+BankAccount.change_name('access','23')
 print(lammycoal.balance)
 print(lammycoal.bank_name)
 
@@ -77,6 +77,45 @@ class ATM:
             return False
         return True
 
+
 ATM.daily(100)
-ATM.is_valid_amount(100)
+print(ATM.is_valid_amount(106))
+
+#ENCAPSULATION
+
+class Baccount:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def deposit(self,amount):
+        self.__balance += amount
+
+    def withdraw(self,amount):
+        self.__balance -= amount
+
+    def check_balance(self):
+        print(self.__balance)
+        return
+
+coal = Baccount(1000)
+coal.deposit(100)
+coal.__balance = 9000
+# this coal.__balance doesnt change the balance instead creates a new variable
+coal.withdraw(50)
+coal.check_balance()
+
+#Polymorphism(Email & Sms Notification)
+
+class Email:
+    def send(self):
+        print("Email notification sent")
+
+class Sms:
+    def send(self):
+        print("Sms notification sent")
+
+notification = [Email(), Sms()]
+
+for messages in notification:
+    messages.send()
 

@@ -104,7 +104,7 @@ def withdraw(pin):
 
     users_data[pin]["balance"] -= amount
     new_balance = users_data[pin]["balance"]
-    print(f" Withdrawal succesfull ₦{format(amount, ',')}, new balance is : ₦{format(new_balance, ',')}")
+    print(f" Withdrawal successful ₦{format(amount, ',')}, new balance is : ₦{format(new_balance, ',')}")
 
     users_data[pin]["history"].append(f' Withdrawn ₦{format(amount, ',')} ')
     save_transactions()
